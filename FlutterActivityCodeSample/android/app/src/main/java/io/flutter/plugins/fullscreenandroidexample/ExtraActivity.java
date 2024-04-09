@@ -1,6 +1,7 @@
 package io.flutter.plugins.fullscreenandroidexample;
 
 import android.app.Activity;
+import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;

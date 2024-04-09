@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'constants.dart';
 
 void main() {
@@ -12,7 +13,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  static const adInspectorButtonText = 'Ad Inspector';
+  static const activityButtonText = 'Android Activity';
+  static const platform = MethodChannel('mychannel');
 
   @override
   void initState() {
@@ -35,7 +37,8 @@ class _MyAppState extends State<MyApp> {
               PopupMenuButton<String>(
                 onSelected: (String result) {
                   switch (result) {
-                    case adInspectorButtonText:
+                    case activityButtonText:
+                      platform.invokeMethod('mycall');
                       break;
                     default:
                       throw AssertionError('unexpected button: $result');
@@ -43,8 +46,8 @@ class _MyAppState extends State<MyApp> {
                 },
                 itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
                   PopupMenuItem<String>(
-                    value: adInspectorButtonText,
-                    child: Text(adInspectorButtonText),
+                    value: activityButtonText,
+                    child: Text(activityButtonText),
                   ),
                 ],
               ),

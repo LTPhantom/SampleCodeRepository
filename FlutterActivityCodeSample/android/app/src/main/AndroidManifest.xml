@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="io.flutter.plugins.googlemobileadsexample">
+    package="io.flutter.plugins.fullscreenandroidexample">
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -15,6 +15,9 @@
           <category android:name="android.intent.category.LAUNCHER"/>
         </intent-filter>
       </activity>
+      <activity android:name=".ExtraActivity"
+          android:theme="@style/NoActionBar"
+          />
       <meta-data android:name="flutterEmbedding" android:value="2"/>
     </application>
 </manifest>
